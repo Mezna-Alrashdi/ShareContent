@@ -1,0 +1,38 @@
+<div
+  class="card bg-white border max-w-xs lg:max-w-sm pb-4 text-left rounded-md"
+>
+  <div class="mb-2 object-cover rounded-t-md w-full h-[200px]">
+    <img
+      [src]="blog.blogImage.secure_url"
+      alt=""
+      width=""
+      class="rounded-t-md h-full w-full object-contain"
+    />
+  </div>
+  <div class="p-3">
+    <div class="flex justify-between">
+      <p>
+        <strong>{{ blog.title | titlecase }}</strong>
+      </p>
+      <p class="p-2 bg-yellow-200 text-xs rounded-md bg-opacity-70">
+        {{ blog.category | uppercase }}
+      </p>
+    </div>
+    <p
+      class="text-gray-600 my-2"
+      [innerHTML]="blog.description | limitTo : '50'"
+    ></p>
+    <p class="mb-4 text-sm">
+      posted by: {{ blog.author }} on {{ blog.datetime }}
+    </p>
+
+    <div class="btn">
+      <a
+        [routerLink]="[getParam()]"
+        class="border border-black text-sm p-2 w-1/3 rounded-md transition ease-in-out hover:bg-black hover:text-white duration-300"
+      >
+        Read more
+      </a>
+    </div>
+  </div>
+</div>

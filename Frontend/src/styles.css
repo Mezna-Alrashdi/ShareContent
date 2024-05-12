@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.bg-purple-700{
+    background-color: purple;
+}
+
+.bg-gray-900{
+    background-color: purple;
+}
+
+.bg-\[\#F8F988\]{
+    background-color: white;
+}
+
+#share
+{
+    color: purple;
+}

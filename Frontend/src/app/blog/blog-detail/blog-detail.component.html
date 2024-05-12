@@ -1,0 +1,24 @@
+<div class="container m-auto w-10/12 my-4 min-h-screen">
+  <header class="text-black">
+    <h1 class="text-4xl md:text-5xl">
+      <strong>{{ blog.title | titlecase }}</strong>
+    </h1>
+    <p class="my-4">Posted by: {{ blog.author }} on {{ blog.datetime }}</p>
+    <p class="p-2 bg-yellow-200 text-xs rounded-md mb-4 w-fit bg-opacity-60">
+      {{ blog.category | uppercase }}
+    </p>
+  </header>
+  <div class="">
+    <div class="desc-image h-[40vh] md:h-[60vh] object-cover w-full rounded-lg">
+      <img
+        class="h-full w-full rounded-lg object-contain"
+        [src]="imageUrl"
+        alt=""
+      />
+    </div>
+    <div
+      class="desc my-6 text-justify text-gray-600 text-lg"
+      [innerHTML]="content"
+    ></div>
+  </div>
+</div>

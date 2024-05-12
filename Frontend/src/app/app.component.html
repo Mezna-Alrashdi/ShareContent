@@ -1,0 +1,51 @@
+<nav
+  class="flex justify-center p-4 bg-purple-700 text-sm md:text-lg sticky top-0 z-50"
+>
+  <!-- <div class="">
+    <a routerLink="/" class="cursor-pointer">Express Blog</a>
+  </div> -->
+  <div class="w-[80%] flex justify-center space-x-5 text-white">
+    <ng-container>
+      <div
+        class="hover:text-yellow-400 hover:transition-all hover:duration-200"
+      >
+        <a routerLink="/">Home</a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!isLoggedIn()">
+      <div>
+        <a
+          routerLink="/login"
+          class="hover:text-yellow-400 hover:transition-all hover:duration-200"
+          >Login</a
+        >
+      </div>
+      <div>
+        <a
+          routerLink="/register"
+          class="hover:text-yellow-400 hover:transition-all hover:duration-200"
+          >Register</a
+        >
+      </div>
+    </ng-container>
+    <ng-container *ngIf="isLoggedIn()">
+      <div>
+        <a
+          routerLink="/dashboard"
+          class="hover:text-yellow-400 hover:transition-all hover:duration-200"
+          >Dashboard</a
+        >
+      </div>
+      <div>
+        <a
+          routerLink="/logout"
+          (click)="submit()"
+          class="hover:text-yellow-400 hover:transition-all hover:duration-200"
+        >
+          Logout
+        </a>
+      </div>
+    </ng-container>
+  </div>
+</nav>
+<router-outlet></router-outlet>
